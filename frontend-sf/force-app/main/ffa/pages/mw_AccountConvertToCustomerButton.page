@@ -1,0 +1,5 @@
+<apex:page
+  standardcontroller="Account"
+  extensions="mw_AccountPageController"
+  action="{!convertToCustomerAction}"
+/>

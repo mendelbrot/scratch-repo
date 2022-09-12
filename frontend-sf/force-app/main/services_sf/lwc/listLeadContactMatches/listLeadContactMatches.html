@@ -1,0 +1,35 @@
+<template>
+  <div class="border padding">
+    <template if:true={areResults}>
+      <template for:each={formattedSearchResults} for:item="result">
+        <div class="flex-space list-margin" key={result.Id}>
+          <div class="flex-space flex1">
+            <a name={result.Id} class="flex1" onclick={handleNavToRecord}
+              >{result.Name}</a
+            >
+            <template if:true={areLeads}>
+              <p class="flex1">{result.Company}</p>
+            </template>
+            <template if:true={areContacts}>
+              <a
+                name={result.AccountId}
+                class="flex1"
+                onclick={handleNavToRecord}
+                >{result.AccountName}</a
+              >
+            </template>
+          </div>
+          <lightning-button
+            label="Match"
+            slot="actions"
+            name={result.Id}
+            onclick={handleMatch}
+          ></lightning-button>
+        </div>
+      </template>
+    </template>
+    <template if:false={areResults}>
+      <p>No results</p>
+    </template>
+  </div>
+</template>

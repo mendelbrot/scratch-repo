@@ -1,0 +1,54 @@
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+.vspace {
+  height: 30px;
+}
+
+.minvspace {
+  height: 10px;
+}
+
+.minhspace {
+  width: 10px;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.margin {
+  margin: 12px;
+}
+
+.padding {
+  padding: 12px;
+}
+
+.border {
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+
+.list-margin:not(:last-child) {
+  margin-bottom: 5px;
+  border-bottom: 1px solid lightsteelblue;
+  padding-bottom: 5px;
+}

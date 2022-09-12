@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.loginPage {
+    width: 300px;
+    margin:0 auto;
+}
+
+.loginForm {
+    margin-top: 10vh;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 5px 5px 6px;
+}
+
+.buttonLogin  {
+    margin: 0 auto;
+}
+
+.login-btn{
+    width: 100%;
+    background: #54AE70 !important;
+}
+
+.logoImage {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

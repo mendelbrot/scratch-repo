@@ -1,0 +1,77 @@
+﻿@model DiscussipediA.Models.PaginatedList<DiscussipediA.Models.Post>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (ViewData["CurrentSort"].ToString() == "datetime_asc")
+{
+    ViewData["SortPost"] = "datetime_desc";
+}
+
+else
+{
+    ViewData["SortPost"] = "datetime_asc";
+}
+
+<h2>@Html.Raw(ViewBag.DiscussionName) Posts</h2>
+
+<form asp-action="Index"
+      asp-route-DiscussionId"=@ViewData["DiscussionId"]>
+    <div class="form-actions no-color">
+        <p>
+            Search:
+            <input type="text" name="searchString" value="@ViewData["CurrentFilter"]"
+                   placeholder="" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        </p>
+    </div>
+</form>
+
+<p>
+    <a asp-route-DiscussionId=@ViewData["DiscussionId"]
+       asp-route-DiscussionName=@ViewData["DiscussionName"]
+       asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td style="width:15%; padding-top:50px"></td>
+            <td></td>
+        </tr>
+            <tr>
+                <td style="font-weight:bold">
+                    Alias Name:
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">
+                    Posted:
+                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Datetime)
+                </td>
+            </tr>
+            <tr>
+                <td style="font-weight:bold">
+                    Content:
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.PostId">Delete</a>
+                </td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>

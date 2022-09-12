@@ -1,0 +1,106 @@
+<template>
+  <template if:true={isLead}>
+    <!-- NEW LEAD FORM -->
+    <lightning-record-edit-form
+      object-api-name="Lead"
+      onerror={handleFormError}
+      onsubmit={handleFormSubmit}
+      onsuccess={handleFormSuccess}
+    >
+      <!-- hidden fields -->
+      <lightning-input-field
+        field-name="Email"
+        value={rowData._id}
+        class="slds-hide"
+      >
+      </lightning-input-field>
+      <lightning-input-field
+        field-name="Lead_Generator__c"
+        value={name}
+        class="slds-hide"
+      >
+      </lightning-input-field>
+      <lightning-input-field
+        field-name="Last_Contacted__c"
+        value={date}
+        class="slds-hide"
+      >
+      </lightning-input-field>
+
+      <!-- editable fields -->
+      <lightning-input-field
+        field-name="Title"
+        value={rowData.title}
+      ></lightning-input-field>
+      <lightning-input-field field-name="FirstName" value={rowData.first_name}>
+      </lightning-input-field>
+      <lightning-input-field field-name="LastName" value={rowData.last_name}>
+      </lightning-input-field>
+      <lightning-input-field
+        field-name="Company"
+        value={rowData.company}
+      ></lightning-input-field>
+      <lightning-input-field field-name="Linkedin__c"></lightning-input-field>
+      <lightning-input-field
+        field-name="MW_Company_Fit__c"
+      ></lightning-input-field>
+      <lightning-input-field
+        field-name="Status__c"
+        value="Open"
+      ></lightning-input-field>
+
+      <lightning-button
+        variant="success"
+        class="slds-m-top_small"
+        type="submit"
+        label="Create Lead"
+      >
+      </lightning-button>
+    </lightning-record-edit-form>
+  </template>
+  <template if:true={isContact}>
+    <!-- NEW CONTACT FORM -->
+    <lightning-record-edit-form
+      object-api-name="Contact"
+      onerror={handleFormError}
+      onsubmit={handleFormSubmit}
+    >
+      <!-- hidden fields -->
+      <lightning-input-field
+        field-name="Email"
+        value={rowData._id}
+        class="slds-hide"
+      >
+      </lightning-input-field>
+      <lightning-input-field
+        field-name="Last_Contacted__c"
+        value={date}
+        class="slds-hide"
+      >
+      </lightning-input-field>
+
+      <!-- editable fields -->
+      <lightning-input-field
+        field-name="Title"
+        required
+      ></lightning-input-field>
+      <lightning-input-field field-name="FirstName" value={rowData.first_name}>
+      </lightning-input-field>
+      <lightning-input-field field-name="LastName" value={rowData.last_name}>
+      </lightning-input-field>
+      <lightning-input-field field-name="AccountId"></lightning-input-field>
+      <lightning-input-field field-name="Linkedin__c"></lightning-input-field>
+      <lightning-input-field field-name="ReportsToId"> </lightning-input-field>
+      <lightning-input-field
+        field-name="MW_Company_Fit__c"
+      ></lightning-input-field>
+      <lightning-button
+        variant="brand"
+        class="slds-m-top_small"
+        type="submit"
+        label="Create Contact"
+      >
+      </lightning-button>
+    </lightning-record-edit-form>
+  </template>
+</template>

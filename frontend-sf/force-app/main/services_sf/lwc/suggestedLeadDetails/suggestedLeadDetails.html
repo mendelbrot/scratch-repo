@@ -1,0 +1,33 @@
+<template>
+  <template if:true={spinner}>
+    <lightning-spinner
+      alternative-text="Loading"
+      size="large"
+    ></lightning-spinner>
+  </template>
+  <p class="margin">email: <b>{rowData._id}</b></p>
+  <lightning-accordion class="details-accordion" active-section-name="Search">
+    <!-- <lightning-accordion-section name="Matches" label={titleForMatchSection}>
+      <c-matches-lead-contact 
+        row-data={rowData}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+      ></c-matches-lead-contact>
+    </lightning-accordion-section> -->
+    <lightning-accordion-section name="Search" label="Search">
+      <c-search-lead-contact
+        row-data={rowData}
+        search-value={searchValue}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+      ></c-search-lead-contact>
+    </lightning-accordion-section>
+    <lightning-accordion-section name="Create" label={titleForCreateSection}>
+      <c-create-lead-contact
+        row-data={rowData}
+        onshowspinner={handleShowSpinner}
+        onhidespinner={handleHideSpinner}
+      ></c-create-lead-contact>
+    </lightning-accordion-section>
+  </lightning-accordion>
+</template>

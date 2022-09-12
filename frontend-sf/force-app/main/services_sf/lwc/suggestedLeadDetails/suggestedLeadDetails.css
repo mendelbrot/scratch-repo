@@ -1,0 +1,19 @@
+h1 {
+  font-size: 150%;
+}
+
+.vspace {
+  height: 30px;
+}
+
+.minvspace {
+  height: 10px;
+}
+
+.margin {
+  margin: 12px;
+}
+
+.padding {
+  padding: 12px;
+}

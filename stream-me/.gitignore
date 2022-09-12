@@ -1,0 +1,6 @@
+*.graphql.d.ts
+*.graphqls.d.ts
+__generated__
+
+.env
+.env.*

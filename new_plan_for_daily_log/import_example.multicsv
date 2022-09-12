@@ -1,0 +1,20 @@
+---
+_id: x4b77885e7
+name: sjar
+type: daily_log
+created: 1645233500000
+edited: 1685233500000
+---
+
+lenses.x4b77885e7
+_id,label,type,interface,active
+a4b77885e7, m, number, "{""type"": ""enum"", ""values"": [0,1,2,3,4,5]}",true
+a4b77885e8, s, number,"{""type"": ""enum"", ""values"": [0,1,2,3,4,5]}",true
+a4b77885e9, note, text,,true
+a4b77885e0, feeling, text, "{""type"": ""enum"", ""values"": [""depressed"", ""anxious"", ""strung out"", ""ok"", ""good"", ""great""]",false
+
+docs.x4b77885e7
+_id,date,m,s,note,feeling
+a4b77885f7, 2022-01-01,,,"my first entry",,
+a4b77885f8, 2022-01-02,2,,,"depressed",
+a4b77885f9, 2022-01-03,,1,"today i had a coffee",,

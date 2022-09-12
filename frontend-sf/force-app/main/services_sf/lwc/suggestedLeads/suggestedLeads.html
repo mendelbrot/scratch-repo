@@ -1,0 +1,104 @@
+<template>
+  <lightning-card>
+    <div class="side-padding">
+      <div class="flex">
+        <lightning-button
+          variant="neutral"
+          label="Refresh"
+          disabled={loading}
+          onclick={handleRefresh}
+        ></lightning-button>
+        <div class="minhspace"></div>
+        <lightning-button
+          variant="neutral"
+          label="More >"
+          disabled={loading}
+          onclick={handleGetMore}
+        ></lightning-button>
+        <template if:true={areSelectedRows}>
+          <div class="minhspace"></div>
+          <lightning-button
+            variant="destructive-text"
+            label="Dismiss Selected"
+            disabled={loading}
+            onclick={handleBulkDismiss}
+          ></lightning-button>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+
+  <div class="flex">
+    <div class="flex2 margin-right margin-top">
+      <template if:true={loading}>
+        <lightning-spinner
+          alternative-text="Loading"
+          size="large"
+        ></lightning-spinner>
+      </template>
+      <template if:true={data}>
+        <lightning-datatable
+          data={data}
+          columns={columns}
+          key-field="_id"
+          onrowaction={handleRowActions}
+          onrowselection={handleRowSelection}
+        >
+        </lightning-datatable>
+      </template>
+    </div>
+
+    <div class="flex1">
+      <template if:true={message}>
+        <div class="margin-top">
+          <lightning-card>
+            <div class="side-padding">
+              <h1>Message</h1>
+              <p>{message}</p>
+              <div class="vspace"></div>
+            </div>
+          </lightning-card>
+          <c-sales-navigator-member-profile></c-sales-navigator-member-profile>
+        </div>
+      </template>
+
+      <template if:true={newRecord}>
+        <div class="margin-top">
+          <lightning-card>
+            <div class="side-padding">
+              <h1>{newRecord.apiName} {addedOrUpdated}</h1>
+              <div class="minvspace"></div>
+              <lightning-button
+                variant="brand-outline"
+                label={newRecord.Name}
+                disabled={loading}
+                onclick={handleNavToRecord}
+              ></lightning-button>
+            </div>
+          </lightning-card>
+        </div>
+      </template>
+
+      <div class="margin-top">
+        <lightning-card>
+          <div class="side-padding">
+            <template if:true={rowData}>
+              <c-suggested-lead-details
+                row-data={rowData}
+                search-value={searchValue}
+                onsuccess={handleAfterAdd}
+                onmessage={handleMessage}
+                onmatch={handleAfterMatch}
+              ></c-suggested-lead-details>
+            </template>
+            <template if:true={data}>
+              <template if:false={rowData}>
+                <h1>No item selected</h1>
+              </template>
+            </template>
+          </div>
+        </lightning-card>
+      </div>
+    </div>
+  </div>
+</template>

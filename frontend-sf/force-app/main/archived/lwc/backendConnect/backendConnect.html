@@ -1,0 +1,18 @@
+<template>
+  <lightning-card title="Backend Connect">
+    <lightning-button
+      label="Get Data"
+      onclick={handleGetData}
+    ></lightning-button>
+    <template if:true={data}>
+      <p>{data}</p>
+    </template>
+    <template if:true={error}>
+      <p>status: {errors.status}</p>
+      <p>statusText: {errors.statusText}</p>
+      <template for:each={errors.body} for:item="error">
+        <p key={error.message}>statusText: {error.message}</p>
+      </template>
+    </template>
+  </lightning-card>
+</template>

@@ -1,0 +1,37 @@
+{
+  "name": "scratchcard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.8.0",
+    "express": "^4.16.4",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "react": "^16.8.0",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8",
+    "react-toastify": "^5.0.0-rc.6",
+    "styled-components": "^4.0.2",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "node ./server/index.js",
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:8080"
+}

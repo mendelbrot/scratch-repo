@@ -1,0 +1,43 @@
+<template>
+  <div class="flex-space">
+    <div class="flex-start">
+      <lightning-input
+        type="text"
+        value={searchValue}
+        onchange={handleSearchValueChange}
+        onkeypress={handleEnter}
+      ></lightning-input>
+      <div class="minhspace"></div>
+      <lightning-button
+        label="X"
+        onclick={clearSearch}
+        variant="neutral"
+      ></lightning-button>
+    </div>
+    <div class="minhspace"></div>
+    <lightning-button
+      label="Search"
+      onclick={handleSearch}
+      variant="brand"
+    ></lightning-button>
+  </div>
+  <template if:true={leadSearchResults}>
+    <div class="vspace"></div>
+    <p><b>Leads</b></p>
+    <c-list-lead-contact-matches
+      lead-or-contact="Lead"
+      row-data={rowData}
+      search-results={leadSearchResults}
+    ></c-list-lead-contact-matches>
+  </template>
+  <template if:true={contactSearchResults}>
+    <div class="vspace"></div>
+    <p><b>Contacts</b></p>
+    <c-list-lead-contact-matches
+      lead-or-contact="Contact"
+      row-data={rowData}
+      search-results={contactSearchResults}
+    >
+    </c-list-lead-contact-matches>
+  </template>
+</template>

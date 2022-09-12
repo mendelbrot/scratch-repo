@@ -1,0 +1,99 @@
+.App {
+    text-align: center;
+    background-color: rgb(206, 213, 223);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+  }
+
+  h2{
+    text-transform: uppercase;
+    color: #E8542A;
+  }
+
+  p, ul li, span, table tr td{
+    font-family: 'PT Sans', sans-serif;
+  } 
+
+  h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  input:focus, input:active{
+    border: none;
+    outline: none;
+  }
+
+  button:focus, button:active{
+    border: none;
+    outline: none;
+  }
+
+  .btn-secondary{
+    border: none;
+    background: #222;
+  }
+
+  .landingpage-wrapper{
+    text-align: center;
+    width: 50vw;
+    position: absolute;
+    margin: 10vh 25vw;
+    padding: 10vh;
+    color: #E8542A;
+    border: 2px dashed #222;
+    border-radius: 3%;
+    background: #fff;
+    z-index: 99;
+  }
+
+  .home-arrow{
+    position: relative;
+    width: 350px;
+    left: 65%;
+    z-index: 9;
+  }
+
+  .landingpage-wrapper h1{
+    margin-bottom: 30px;
+  }
+
+.SingleLink {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .SingleLink:hover{
+    text-decoration: none;
+    color: #E8542A;
+  }
+
+  .navbar{
+    padding: 10px 7vw !important;
+    background: #222;
+  }
+
+  .navbar-nav{
+    flex-direction: row !important;
+    align-items: center;
+  }
+
+  .nav-logo{
+    padding: 10px 20px;
+    width: 150px;
+  }
+
+  .primary-button a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .primary-button a:hover{
+    text-decoration: none;
+    color: #fff;
+  }
+  

@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "1",
+        "key": "references",
+        "value": [
+            {
+                "type": "LIST",
+                "value": [
+                    {
+                        "type": "LINK",
+                        "label": "link"
+                    },
+                    {
+                        "type": "TEXT",
+                        "label": "note"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "_id": "2",
+        "key": "dates",
+        "value": [
+            {
+                "type": "DATE",
+                "label": "start"
+            },
+            {
+                "type": "DATE",
+                "label": "end"
+            }
+        ]
+    },
+    {
+        "_id": "3",
+        "key": "location",
+        "value": [
+            {
+                "type": "DOC_ID"
+            }
+        ]
+    }
+]

@@ -1,0 +1,43 @@
+﻿@model DiscussipediA.VMs.SiteUserVM
+
+<h2>Welcome to DiscussipediA</h2>
+
+<p>This is the website where people discuss things.  Feel free to add a subject, add a discussion, and post to a discussion.  When you post, please provide an alias name which you can change at any time.  You can input your alias name on this page or at the create post page.  We use cookies to remember your alias name. We also use session data for various purposes.</p>
+
+@if (ViewData["aliasName"] != null)
+{
+    @Html.Raw("<h3>Your alias name is " + ViewData["aliasName"] + "</h3>");
+}
+else
+{
+
+    @Html.Raw("<h3>Your alias name is not set</h3>");
+}
+
+<form asp-action="Index">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="aliasName" value="@ViewData["aliasName"]" style="width: 150px" class="form-control" />
+        <span asp-validation-for="aliasName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Change Alias" class="btn btn-default" />
+    </div>
+</form>
+
+<h4>Here is a form to allow you to write a note to yourself if you wish</h4>
+
+<form asp-action="Index">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="note" class="form-control" />
+        <span asp-validation-for="note" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Make a Note" class="btn btn-default" />
+    </div>
+</form>
+
+<h5>Currently, your note says:</h5>
+
+<p>@ViewData["noteToSelf"]</p>

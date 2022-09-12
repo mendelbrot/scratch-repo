@@ -1,0 +1,29 @@
+[
+    {
+        "_id": "d4b665e6-1bae-4f6c-9ff2-37086e44b103",
+        "name": "notes about something",
+        "tags": [ 
+            "a4b665e6-1bae-4f6c-9ff2-37086e44b103" 
+        ],
+        "text": "hello. this is a note.",
+        "keys": {
+            "references": [
+                {
+                    "link": "https://www.home.com/",
+                    "note": "home.  this is the place..."
+                }
+            ]
+        },
+        "created": 1634513074,
+        "edited": 1854513074
+    },
+    {
+        "_id": "f4b465e6-1bae-4f6c-9ff2-37086e44b103",
+        "name": "notes about something 2",
+        "tags": [],
+        "text": "hello. this is another note.",
+        "keys": {},
+        "created": 1634513077,
+        "edited": 2634513074
+    }
+]

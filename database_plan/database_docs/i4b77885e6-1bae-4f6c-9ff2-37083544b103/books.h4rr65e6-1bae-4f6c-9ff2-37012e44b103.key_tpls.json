@@ -1,0 +1,21 @@
+[
+    {
+        "_id": "f4qq65e6-1bae-4f6c-9ff2-37012e44b103",
+        "key": "references",
+        "value": [
+            {
+                "type": "LIST",
+                "value": [
+                    {
+                        "type": "LINK",
+                        "label": "link"
+                    },
+                    {
+                        "type": "TEXT",
+                        "label": "note"
+                    }
+                ]
+            }
+        ]
+    }
+]

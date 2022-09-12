@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "star-wars-trivia-app",
+    "slug": "star-wars-trivia-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/mobile_icons/icon.png",
+    "splash": {
+      "image": "./assets/mobile_icons/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/mobile_icons/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/mobile_icons/favicon.png"
+    }
+  }
+}

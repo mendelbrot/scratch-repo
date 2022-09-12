@@ -1,0 +1,27 @@
+// Header styles
+header {
+
+    background-color: black;
+    color: $brand-color-light;
+
+    .title-bar {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            
+
+            
+        }   
+    
+    .hamburger {
+        display: none;
+
+        @media (max-width: $tabletPortrait){
+            display: block;
+            
+            }
+        
+    }
+
+  
+}

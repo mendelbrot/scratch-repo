@@ -1,0 +1,24 @@
+  .Dropzone {
+    color: white;
+    background-color:#54AE70;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    min-width: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .Highlight {
+    background-color: rgb(188, 185, 236);
+  }
+
+  .FileInput {
+    display: none;
+  }

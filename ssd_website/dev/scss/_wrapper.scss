@@ -1,0 +1,6 @@
+// Wrapper styles
+.wrapper {
+    max-width: $width;
+    @include margin-center;
+    background-color: $wrapper-bg-color;
+}

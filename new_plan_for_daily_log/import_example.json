@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "_id": "5fb822e479046357251f70e3",
+    "name": "dayday",
+    "type": "daily_log",
+    "created": 1645233500000,
+    "edited": 1685233500000
+  },
+  "lenses.5fb822e479046357251f70e3": [
+    {
+      "label": "m",
+      "type": "number",
+      "interface": {
+        "type": "enum",
+        "values": [0,1,2,3,4,5]
+      },
+      "active": true
+    },
+    {
+      "label": "s",
+      "type": "number",
+      "interface": {
+        "type": "enum",
+        "values": [0,1,2,3,4,5]
+      },
+      "active": true,
+      "sort_order": 1
+    },
+    {
+      "label": "note",
+      "type": "text",
+      "active": true
+    },
+    {
+      "label": "feeling",
+      "type": "text",
+      "use_values_list": true,
+      "interface": {
+        "type": "enum",
+        "values": ["depressed", "anxious", "strung out", "ok", "good", "great"]
+      },
+      "active": false,
+      "sort_order": 3
+    }
+  ],
+  "docs.5fb822e479046357251f70e3": [
+    {
+      "_id": "5fb822e479046357251f70e8",
+      "created": 1645233500000,
+      "edited": 1685233500000,
+      "date": "2022-01-01",
+      "note": "my first entry"
+    },
+    {
+      "_id": "5fb822e479046357251f70e9",
+      "created": 1645233500000,
+      "edited": 1685233500000,
+      "date": "2022-01-02",
+      "m": 2,
+      "feeling": "depressed"
+    },
+    {
+      "_id": "5fb822e479046357251f70e0",
+      "created": 1645233500000,
+      "edited": 1685233500000,
+      "date": "2022-01-03",
+      "s": 1,
+      "note": "today i had a coffee"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+
+2021-10-24
+these were my initial plans/scetches for the database.  the current database structure with example data is in the database_docs folder
+
+database overview
+------------------
+dint
+
+    users
+    global_key_tpls
+    book_types
+
+dint.<email>
+
+    key_tpls
+    books_meta
+
+    book.#.docs
+    book.#.stories
+    book.#.tags
+    book.#.key_tpls
+
+
+
+database detail
+----------------
+
+dint
+
+    users
+
+        _id: <email>
+        name
+        is_guest_of: [
+            user_id
+            book_id
+            perm
+        ]
+
+    global_key_tpls
+
+        _id: 1
+        key: refs
+        value: [
+            type: LIST
+            value: [
+                link: LINK
+                note: TEXT
+            ]
+        ]
+
+        _id: 2
+        key: dates
+        value: [
+            { 
+                type: DATE
+                label: start
+            }
+            { 
+                type: DATE
+                label: end
+            }
+        ]
+
+        _id: 3
+        key: loc
+        value: [
+            { 
+                type: DOC_ID
+            }
+        ]
+    
+    book_types
+
+        _id 1
+        name: daily log
+        starting_key_tpls: [
+            
+        ]
+
+        _id 2
+        name: inventory
+        starting_key_tpls: [
+            3
+        ]
+
+        _id 3
+        name: notebook
+        starting_key_tpls: [
+            1
+        ]
+
+        _id 4
+        name: todo
+        default_key_tpls: [
+            2
+        ] 
+
+dint.<email>.docs
+
+    books_meta
+
+        _id
+        name
+        type
+        key_tpls: [ #... ]
+
+    book.#.docs
+
+        _id
+        name
+        tags: [ #... ]
+        text
+        keys: {}
+        created: timestamp
+        edited: timestamp
+
+    book.#.stories
+
+        _id
+        name
+        docs: [ # ]
+
+    book.#.tags
+
+        _id
+        name
+
+    book.#.key_tpls
+
+        _id
+        key
+        value
+
+

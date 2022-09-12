@@ -1,0 +1,68 @@
+service: service-sf
+
+plugins:
+  - serverless-python-requirements
+  - serverless-plugin-resource-tagging
+  - serverless-wsgi
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  wsgi:
+    app: handlers/server.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: non-linux
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: "*"
+  lambdaHashingVersion: 20201221
+  timeout: 20 # optional, in seconds, default is 6
+  stackTags:
+    Circle: "IT"
+    Project: "Salesforce"
+  environment:
+    ENV_FILE: config.${self:custom.stage}.json
+
+functions:
+  cronProcessor:
+    handler: handlers/cron_processor.main
+    name: ${self:custom.stage}-cron-processor-sf
+    events:
+      - schedule: cron(0 2 ? * SUN *)
+  processor:
+    handler: handlers/processor.main
+    name: ${self:custom.stage}-processor-sf
+  authorizer:
+    handler: handlers/authorizer.main
+    name: ${self:custom.stage}-authorizer-sf
+  server:
+    handler: wsgi_handler.handler
+    name: ${self:custom.stage}-server-sf
+    events:
+      - http: 
+          path: /suggested-leads
+          method: get
+          authorizer: authorizer
+      - http: 
+          path: /suggested-leads/delete
+          method: delete
+          authorizer: authorizer
+      - http: 
+          path: /excluded-emails
+          method: get
+          authorizer: authorizer
+      - http: 
+          path: /excluded-emails
+          method: post
+          authorizer: authorizer
+      - http: 
+          path: /excluded-emails/delete
+          method: delete
+          authorizer: authorizer

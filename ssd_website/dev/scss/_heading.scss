@@ -1,0 +1,24 @@
+.subHead{    
+    margin-top: $margin;
+    background-color: $bgColor;
+    color:$cellColor;
+    padding:$headingPadding;
+    margin-bottom: $margin;
+    border-radius:$borderRadius;
+}
+.textPositon{
+    @include flatten;
+    margin-left: 20px;
+}
+
+.mainHead{
+    text-align: center;
+}
+.contactSubhead{
+    font-size: 30;
+    background-color: $bgColor;
+    font-weight: $fontStyle;
+    color: $text-color-light;
+    padding: $cellPadding;
+    border-radius:$borderRadius;
+}

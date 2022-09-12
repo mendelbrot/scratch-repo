@@ -1,0 +1,13 @@
+.students {
+
+        table {
+            width: 70%;
+        }
+
+    @media (max-width: $tabletPortrait) {
+
+        table {
+            width: 90%;
+        }
+    }
+}

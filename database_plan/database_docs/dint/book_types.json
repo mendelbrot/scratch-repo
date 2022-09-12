@@ -1,0 +1,22 @@
+[        
+    {
+        "_id": "1",
+        "name": "daily log",
+        "starting_key_tpls": []
+    },
+    {
+        "_id": "2",
+        "name": "inventory",
+        "starting_key_tpls": ["3"]
+    },
+    {
+        "_id": "3",
+        "name": "notebook",
+        "starting_key_tpls": ["1"]
+    },
+    {
+        "_id": "4",
+        "name": "todo",
+        "starting_key_tpls": ["2"]
+    }
+]

@@ -1,0 +1,89 @@
+﻿@model DiscussipediA.Models.PaginatedList<DiscussipediA.Models.Discussion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (ViewData["CurrentSort"].ToString() == "name_asc")
+{
+    ViewData["SortDiscussion"] = "name_desc";
+}
+
+else
+{
+    ViewData["SortDiscussion"] = "name_asc";
+}
+
+<h2>@Html.Raw(ViewBag.SubjectName) Discussions</h2>
+
+<form asp-action="Index"
+      asp-route-SubjectId=@ViewData["SubjectId"]>
+    <div class="form-actions no-color">
+        <p>
+            Search:
+            <input type="text" name="searchString" value="@ViewData["CurrentFilter"]"
+                   placeholder="" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        </p>
+    </div>
+</form>
+
+<p>
+    <a asp-route-SubjectId=@ViewData["SubjectId"]
+       asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th><a asp-action="Index" 
+                   asp-route-SubjectId=@ViewData["SubjectId"]
+                   class="glyphicon glyphicon-refresh"></a></th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-SubjectId=@ViewData["SubjectId"]
+                   asp-route-sortOrder=@ViewData["SortDiscussion"]
+                   asp-route-searchString="@ViewData["CurrentFilter"]">Subject</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    <a asp-area=""
+                       asp-controller="Posts"
+                       asp-action="Index"
+                       asp-route-DiscussionId="@item.DiscussionId">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" 
+                       asp-route-id="@item.DiscussionId"
+                       asp-route-SubjectId=@ViewData["SubjectId"]>Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-searchString="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-searchString="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

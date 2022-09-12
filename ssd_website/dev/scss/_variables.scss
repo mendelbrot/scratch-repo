@@ -1,0 +1,106 @@
+// Colors
+$brand-color:#1481e0;
+$body-bg-color:	#8d8ec5;
+$wrapper-bg-color:  	#E0E0E0;
+$bgColor:#003c71;
+// Text Colors
+$text-color-dark: black;
+$text-color-light: white;
+$header-main-color:white;
+$list-head-color:gray;
+
+//Table 
+$cellColor:white;
+$borderRadius:25px;
+$cellPadding:20px;
+$cellMargin:10px;
+$cellMarginRight:15px;
+$cellMarginLeft:10px;
+$headingPadding:10px;
+$margin: 20px;
+
+// Use Color functions to brighten and darken colors
+$brand-color-dark: darken($brand-color, 20);
+$brand-color-light: lighten($brand-color, 20);
+
+// Fonts
+$body-font: Georgia, Times, Times New Roman, serif;
+$heading-font: Tahoma, Verdana, Segoe, sans-serif;
+$font-Size:17px;
+// Typographic Defualts
+$line-height: 1.4;
+
+//paragraph
+$textAlign:center;
+$fontSize:15px;
+$textdecoration:none;
+$width:25%;
+$leftWidth:75%;
+
+//Text Input 
+$inputPadding:12px 20px;
+$inputMargin: 8px 0;
+$inputWidth:100%;
+$inputDisplay:inline-block;
+$radius:4px;
+$boxSizing:border-box;
+$inputBorder:1px solid #ccc;
+
+//submit Input
+$buttonMargin-top: 95px;
+$buttonText-align: center;
+$buttonBorder: none;
+$buttonHeight: 40px;
+$buttonWidth: 20%;
+$button-radius: 5px;
+ //label
+ 
+
+
+// heading
+$subHeading : 20px;
+$fontStyle:bold;
+$font-style:italic;
+$margin:25px;
+
+//Radio
+$radioWidth:93%;
+$radioBorder:1px solid $bgColor;
+$radioMargin-top: 35px;
+$radioMargin-left:35px;
+$lineHeight: 25px;
+
+//Div
+$contactDivBorder:1px dashed $brand-color;
+$divWidth: 45%;
+$display: inline-block;
+
+
+// Layout variables
+$padding: 50px;
+$width: 1000px;
+$borderSpacing: 20px;
+
+
+
+// Function to determine column width
+// takes two numerical parameters:
+// $c -> the number of columns in a row
+// $g -> the gutter amount
+@function colWidth($c, $g: 2){
+    @return ((100 - $g * ($c - 1)) / $c) * 1%;
+}
+
+
+// Function to
+// Convert Px to Ems
+@function em($px, $bc: 16){
+    @return #{$px/$bc}em; 
+}
+
+// Media Query Breakpoints
+$desktopMedium: em(1250);
+$tabletLandscape: em(1024);
+$tabletPortrait: em(850);
+$phoneLandscape: em(670);
+$phonePortrait: em(420);

@@ -1,0 +1,38 @@
+.createCampaign {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.formCreateCampaign {
+    padding: 5% ;
+}
+
+.innerDivCreate {
+    position: absolute;
+    height: 180px;
+    width: 400px;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background: white;
+    text-align: center;
+}
+
+.cancelButton {
+    width: 50px;
+    height: 50px;
+}
+
+.buttonCreateCampaign {
+    margin: 0 auto;
+}

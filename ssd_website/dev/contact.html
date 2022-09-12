@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact</title>
+	
+	<!-- *** IMPORTANT *** PUT LINKS TO GOOGLE FONTS HERE. DO NOT PUT THEM INSIDE THE build:css comments -->
+	<!-- Put Google Fonts Here -->
+
+	<!-- end Google Fonts -->
+	<!-- *** IMPORTANT *** DO NOT DELETE OR EDIT THE NEXT THREE LINES OF CODE - THEY ARE IMPORTANT FOR THE GULP BUILD PROCESS. SEE YOUR INSTRUCTOR FIRST IF YOU WANT TO EDIT OR DELETE THESE LINES -->
+	<!-- build:css styles/styles.min.css -->
+	<link rel="stylesheet" href="styles/styles.css">
+	<!-- endbuild -->
+</head>
+<body>
+
+<!-- Put your HTML code here... -->
+
+
+<div class="wrapper">
+
+	<header>
+
+		<img src="./images/coding-banner-1.jpg" alt="code on a computer screen">
+
+		<div class="title-bar">
+
+			<h1>SSD Program</h1>
+
+			<button class="hamburger hamburger--3dx" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</button>
+
+		</div>
+
+		<nav>
+			<ul>
+				<li class="first-nav-item">
+					<a href="./index.html" >
+						<span>Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="./schedule.html">
+						<span>Schedule</span>
+					</a>
+				</li>
+				<li>
+					<a href="./students.html">
+						<span>Students</span>
+					</a>
+				</li>
+				<li>
+					<a href="./staff.html">
+						<span>Staff</span>
+					</a>
+				</li>
+				<li>
+					<a href="./e-resources.html">
+						<span>E-Recources</span>
+					</a>
+				</li>
+				<li>
+					<a href="./overview.html">
+						<span>Program</span>
+					</a>
+				</li>
+				<li>
+					<a href="./courses.html">
+						<span>Courses</span>
+					</a>
+				</li>
+				<li>
+					<a href="./contact.html" class="nav-current-page">
+						<span>Contact</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class=" mainStaffDiv ">
+			<h1 class="mainHead">Contact Us</h1>
+			<div class="contactBg">
+				<h2 class="subHead textposition">Helpful Links</h2>
+				<div class="contactHelp">
+					<ul>
+						<li>
+								<a href="https://secure.bcit.ca/sis/apply/">Start your application.</a>
+						</li>
+						<li>
+								<a href="https://secure.bcit.ca/sis/apply/">Check your application status.</a>
+						</li>
+						<li>
+								<a href="https://www.bcit.ca/international/">Find more information for international students.</a>
+						</li>
+						<li>
+								<a href="https://www.bcit.ca/finaid/">Find more information about financial aids.</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+				
+       	    <div class="contactBg">
+				   <h2 class="subHead textposition">Contact Information</h2>
+           		 <div  class="contactDiv border contactCenter  ">
+						<p class="contactHeading width">For admission and program inquiries:</p>
+						<!-- <p>&nbsp;</p> -->
+               		 <ul class="contactHelp">
+                  		<li>Phone: 604.412.7788</li>
+                   	 	<li>Fax: 604.408.0921</li>
+                  	    <li>Email: HTP@bcit.ca</li>
+						</ul>
+						<p></p>
+           		 </div>
+           		 <div  class="contactDiv border">
+                    <p class="contactHeading">Mailing address:</p>
+                	<ul class="contactHelp">                
+                  		 <li> HTP Programs - BCIT Downtown Campus<br/>
+                   		 350 - 555 Seymour Street<br/>
+                   		 Vancouver, BC, Canada <br/>
+                   		 V6B 3H6 
+                   		</li>
+               		 </ul>
+				 </div>
+					<p class="contactCapmpusMap">
+							<a href="https://www.bcit.ca/about/downtown.shtml" class="anchor">Campus info, map, and directions</a>
+					</p>
+				</div>
+					<div class="contactBg">
+						<h2 class="subHead textposition">Contact Form</h2>
+						<div class="contactHelp">
+							<form onsubmit="display();" action="./feedback.html" method="GET">
+							 <div class="contactDiv">
+								 <div class="contactFormLabel">
+									 <label for="firstName">First name</label>
+								 </div>
+								 <div class="contactInput">
+									<input type="text" name="firstName" id="firstName" maxlength="80" placeholder="First name" size="80" required>
+								 </div>
+							 </div>
+							 <div class="contactDiv">
+								<div class="contactFormLabel">
+									<label for="lastName">Last name</label>
+								</div>
+								<div class="contactInput">
+									<input type="text" name="lastName" id="lastName" maxlength="80" placeholder="Last name" size ="80" required>
+								</div>
+							 </div>
+
+							 <div class="contactDiv">
+								<div class="contactFormLabel">
+									<label for="email">Email</label>
+								</div>
+								<div class="contactInput">
+									<input type="email" name="email" id="email" maxlength="80" placeholder="email@example.com" size="80" required>
+								</div>
+							 </div>
+							
+							
+							<div class="contactDiv" >
+								<div class="contactFormLabel">
+									<label for="phone">Phone</label>
+								</div>
+								<div class="contactInput">
+									<input type="tel" name="phone" id="phone" maxlength="20" placeholder="(000)123-4567">
+								</div>
+							</div>
+
+							<div class="contactRadio">
+								<label>
+								   <input type="radio" name="contactPerson" value="CurrentStudent" required>Current Student
+							    </label>
+								<br>
+								<label>
+									<input type="radio" name="contactPerson" value="ProspectiveStudent" required>Prospective Student
+								</label>
+								<br>
+								<label>
+									<input type="radio" name="contactPerson" value="Instructor" required>Instructor
+								</label>
+								<br>
+
+							</div>
+
+							<div class="contactDiv">
+								<div class="contactFormLabel">
+									<label for="comments">Questions or Comments</label>
+								</div>
+								<div class="contactInput">
+									<textarea name="comments" id="comments" rows="5" cols="25" required></textarea>
+								</div>
+							</div>
+
+							<div class="contactDiv buttonMargin">
+								<div class="inputButton">
+									<input id="submit" type="submit" value="Send &raquo;" class="button">
+								</div>
+							</div>
+                       
+
+							</form>
+							
+						</div>
+			</div>
+
+			
+		</div>
+	</main>
+
+
+	<footer>
+		<p>BCIT SSD Program &copy; 2019</p>
+
+		<nav>
+			<ul>
+				<li class="first-nav-item">
+					<a href="./index.html">
+						<span>Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="./schedule.html">
+						<span>Schedule</span>
+					</a>
+				</li>
+				<li>
+					<a href="./students.html">
+						<span>Students</span>
+					</a>
+				</li>
+				<li>
+					<a href="./staff.html">
+						<span>Staff</span>
+					</a>
+				</li>
+				<li>
+					<a href="./e-resources.html">
+						<span>E-Recources</span>
+					</a>
+				</li>
+				<li>
+					<a href="./overview.html">
+						<span>Program</span>
+					</a>
+				</li>
+				<li>
+					<a href="./courses.html">
+						<span>Courses</span>
+					</a>
+				</li>
+				<li>
+					<a href="./contact.html" class="nav-current-page">
+						<span>Contact</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</footer>
+
+</div>
+
+<!-- *** IMPORTANT *** If you want to add additional JavaScript scripts to your project, then make sure to 
+place the script tags between the build:js comment tags -->
+<!-- *** IMPORTANT *** DO NOT DELETE OR EDIT THE NEXT FOUR LINES OF CODE - THEY ARE IMPORTANT FOR THE GULP BUILD PROCESS. SEE YOUR INSTRUCTOR FIRST IF YOU WANT TO EDIT OR DELETE THESE LINES -->
+<!-- build:js scripts/script.min.js -->
+<script src="scripts/jquery-3.3.1.min.js"></script>
+<script src="scripts/script.js"></script>
+<!-- <script>
+	
+		function display(){
+			var name = document.getElementById('firstName').value;
+			alert("Thank you, "+ name + ". We have received your information and will contact you shortly.");
+		}
+	
+</script> -->
+<!-- endbuild -->	
+</body>
+</html>

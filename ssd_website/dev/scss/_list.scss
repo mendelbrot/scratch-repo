@@ -1,0 +1,36 @@
+.cellStyle{
+    display: inline-block;
+    width: 49%;
+    @include flatten;
+    background-color: $cellColor;
+    border-radius:$borderRadius;
+    //width : 480px;
+    padding:$cellPadding; 
+    margin-bottom: $cellMargin;
+}
+.rightCellStyle
+{
+    // display:flex;
+    display: inline-block;
+    width: 49%;
+  //  margin-right: $cellMarginRight;
+}
+
+//.cellLeft{
+   // margin-left: $cellMarginLeft;
+//}
+.mainStaffDiv{
+    margin-left: auto;
+    margin-right: auto;
+    width:95%;
+}
+
+
+@media (max-width: $tabletPortrait) {
+    .cellLeft {
+        width: 100%;
+    }
+    .rightCellStyle{
+        width: 100%;
+    }
+    }

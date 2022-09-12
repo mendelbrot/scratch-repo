@@ -1,0 +1,31 @@
+h1 {
+  font-size: 150%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+.vspace {
+  height: 30px;
+}
+
+.minvspace {
+  height: 10px;
+}
+
+.minhspace {
+  width: 10px;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.flex-space {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

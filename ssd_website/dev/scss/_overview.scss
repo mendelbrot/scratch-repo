@@ -1,0 +1,28 @@
+.overViewMainDiv{
+    background-color: $header-main-color;
+    padding: 10px;
+    border-radius: 8px;
+  
+
+}
+.overviewTable{
+    column-span: 2;
+    border:1px solid white;
+}
+
+a{
+    font-weight: $fontStyle;
+    color:$brand-color;
+    text-decoration: $textdecoration;
+    font-size: 17px;
+}
+
+.overviewPara{
+    line-height: $line-height;
+    font-size: 17px;
+}
+.moreInfo{
+    font-weight: $fontStyle;
+    color:$brand-color;
+    text-decoration: $textdecoration;
+}

@@ -1,0 +1,40 @@
+.flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex2 {
+  flex: 2;
+}
+
+.side-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.minhspace {
+  width: 10px;
+}
+
+.vspace {
+  height: 30px;
+}
+
+.minvspace {
+  height: 10px;
+}
+
+h1 {
+  font-size: 150%;
+}

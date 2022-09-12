@@ -1,0 +1,359 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Sectioned Essay
+% LaTeX Template
+% Version 1.0 (3/8/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original Author:
+% Nicolas Diaz (nsdiaz@uc.cl) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+%
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+%\usepackage[top=1in]{geometry}
+%
+\usepackage{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+
+\usepackage{float} % [H] option disables table location choosing
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{50pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{40pt} % Some vertical space between the author block and abstract
+\end{flushright}
+
+\begin{center}
+\includegraphics[width=11cm]{3d_chess}
+\end{center}
+
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Tri D Chess v2.1} \\ % Title
+New Rules for the Star Trek 3D Chess Board} % Subtitle
+
+\author{\textsc{Gregory Maxedon} % Author
+\\{\textit{Vancouver, Canada}}} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % Uncomment to change the name of the abstract to something else
+
+%\begin{abstract}
+%\noindent This short paper comments on and expands on some of the details of sections 3.1 and 3.3 of Chris Godsil and Gordon Royle's %classic text Algebraic Graph Theory.
+%\end{abstract}
+
+%\hspace*{3,6mm}\textit{Keywords:} graph , vertex transitive %, dolor , sit amet , lectus % Keywords
+
+\vspace{30pt} % Some vertical space between the abstract and first section
+
+%----------------------------------------------------------------------------------------
+%	ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+%This statement requires citation \cite{Smith:2012qr}; this one does too \cite{Smith:2013jd}.
+
+%\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
+%\vspace{-10pt}
+
+%\vspace{-90pt}
+%\caption{Fish}
+%\end{wrapfigure}
+
+\textit{The Queen is the magnificent flagship capable of high warp speeds. The rook is a heavy warship, wielding great power in it's local sector.  The knight and bishop are medium sized skirmishers equipped with jump drives.  The major and minor pieces compliment and support each other in this new dimension of strategy.}
+
+The 3D chess set used as a prop on the original star trek series is a work of art.  I wish I could know how it's played in the 23rd Century, but I can only imagine.  Star Trek fans have been inventing rules for playing chess on this board since the 70's and this is just one more variation.  
+
+
+
+%------------------------------------------------
+
+\section{Board Setup, Notation, and Starting Arrangement}
+
+The setup consists of three 4x4 square boards, called the MAIN LEVELS, and four 2x2 square boards, called the CORNER LEVELS.  There are a total of 64 squares, the same as a standard chess board.  The main levels are suspended from a frame to form three partly overlapping boards. The corner levels are supported by pillars mounted on the corners of the main levels.  The gameplay determines which 4 out of the 12 corners the corner levels are suspended above.  This variety of Tri D Chess does not use inverted corner levels.
+
+\begin{table}[H]
+%\centering
+\caption{The Seven Levels}
+\label{levels}
+\begin{tabular}{lllll}
+ & Name & Notation & Starting Place & Colour \\
+ & Top level & t & (main) & light yellow \\
+ & Middle level & m & (main)  & light green \\
+ & Bottom level & b & (main)  & light blue  \\
+ & Black King's level & bk & corner b.a1 & blue  \\
+ & Black Queen's level & bq & corner b.d1 & blue \\
+ & White King's level & wk &  corner t.a8 & yellow \\
+ & White Queen's level & wq & corner t.d8 & yellow  
+\end{tabular}
+\end{table}
+
+The corner level names are determined by their starting place.  Squares are identified by their level and their coordinates within the level.  The main levels have ranks numbered 1 through 8 starting from black's side on the bottom level, and columns lettered a through d starting from the Kingside, to black's left.  Main level squares with the same coordinates overlap.
+
+\begin{itemize}
+\item The top level has coordinates a5 through d8.
+\item The middle level has coordinates a3 through d6.
+\item The bottom level has coordinates a1 through d4.
+\item Each of the corner levels has quadrants numbered 1 through 4, counter clockwise. Quadrant 1 is located on the far-right from the perspective of black's side.
+\end{itemize}
+
+In addition to the usual concepts of RANK and FILE, there is also the concept of a COLUMN.  A column is a set of squares that all overlap from directly above.  A column can be named by referring to the algebraic coordinates, if available, or by referring to any square in the column.  For example: column a8, column bq.3.
+
+\begin{table}[H]
+%\centering
+\caption{Notation Examples}
+\label{notation}
+\begin{tabular}{lll}
+ & Description & Notation \\
+ & Square on bottom level a5 & b.a5 \\
+ & Square on white King's level 3 & wk.3 \\
+ & (Black Queen's level) moves to bottom level d4 & b.d4 \\
+ & Bishop on black Queen's level 4 moves to middle level d4  & B.bq.4-m.d4 \\
+\end{tabular}
+\end{table}
+
+This the initial placement of the pieces:
+Pawns:  4 on rank 2, and 2 on each corner level on the far-right and far-left squares closest to the opponent.  The other pieces are placed behind the pawns.
+Rooks: files 1 and 4.
+Kings: file 2.
+Queens: file 3.
+Bishops: on the levels, near-inner squares.
+Knights: on the levels, near-outer squares.
+
+\begin{center}
+\includegraphics[width=11cm]{20170506_140831-1}
+\end{center}
+
+\section{Playing on a Flat Board}
+
+\begin{wrapfigure}[27]{l}{0.5\textwidth} % Inline image example
+\begin{center}
+\includegraphics[width=0.48\textwidth]{flatboard4.pdf}
+\end{center}
+\caption{a flat board arrangement}
+\label{flatboard}
+\end{wrapfigure}
+
+Even if you don't have a fancy 3D chess board, You can still play Tri D Chess!
+
+What you need is a 4x8 grid with some extra space around the border, and the grid squares must be big enough for 4 pieces to occupy one square.  You can use a Bristol board.  Make sure it's long enough.  Use small chess pieces or else your board will be too huge.  I found perfect sized pieces at a thrift store and a garage sale, my squares are 2 1/4" on a side, and the length of my board is 22.5" (a bit under 2').  
+
+Colour coded circles are placed in the squares to represent the different levels, as seen in figure \ref{flatboard}.  Light green circles represent the middle level; light blue and light yellow are the bottom and top levels.  The darker blue and yellow circles are movable and represent the corner levels.  White circles denote other possible corner level places.
+
+\section{Positioning and First Move}
+
+The game starts with a POSITIONING PHASE.  During positioning, the opponents take turns moving the corner levels only.  This determines the topography of the board for the rest of the game.  Levels are stationary after the positioning phase is complete.  
+
+Each level has three positions it is allowed to move between, known as its TRIAD: A triad consists of a level's starting position as well as the positions neighboring it horizontally toward the opponent's side and diagonally upward or downward toward the opponent's side.
+
+\begin{table}[H]
+%\centering
+\caption{The Triads}
+\label{triads}
+\begin{tabular}{lll}
+ & Corner Level & Triad \\
+ & Black King's level & corners b.a1, b.a4, m.a3 \\
+ & Black Queen's level & corners b.d1, b.d4, m.d3 \\
+ & White King's level & corners t.a8, t.a5, m.a6 \\
+ & White Queen's level & corners t.d8, t.d5, m.d6 
+\end{tabular}
+\end{table}
+
+There are four moves in the positioning phase.  The movement order is:
+white, 
+black,
+black,
+white.
+On each move a player may either pass or move any of their levels to any position in its triad. After positioning is finished, black moves first.
+
+The positioning phase can be skipped if both players agree on a starting position.  Another alternative is for the starting position to be chosen randomly.  
+
+\section{Movement Rules}
+
+\subsection{Overview of Piece Movement}
+
+There is more diversity in the way pieces move than there is in standard chess.  The King moves to neighboring squares.  The Queen moves through a path of columns, similar to a queen in standard chess.  The rook makes a hook-move on its level or moves vertically to a new level.  The knight and bishop are both hoppers with customized movement patterns. They can also make non-capturing moves between any two squares on corner levels only.  Pawns move almost like they do in standard chess, with a few extra twists.
+
+\subsection{A Definition}
+
+VERTICAL DISTANCE is an idea that applies to the movement of the King, pawn, knight, and bishop, but does not apply to the Queen or the rook.  Between any two squares, there are three vertical distances: zero, one, and two.  The King, pawn, knight, and bishop, can move a vertical distance of at most one.  The Queen and rook can move any vertical distance.
+
+To calculate vertical distance, partition the squares into three sets B, M, and T.  
+Respectively: \underline{B/M/T} is the set of squares on the \underline{bottom/middle/top} level and on all corner levels connected to it by a pillar.
+
+The vertical distance is zero between squares in the same set.  
+The vertical distance is one if one square is in M and the other square is in T or B.  
+The vertical distance is two if one square is in T and the other is in B.  
+
+\subsection{The King}
+
+The King can move to a square in a neighboring column, or to a different square in the same column.  The king can move a vertical distance of at most one.
+
+
+
+\subsection{The Pawn}
+
+\textit{When I wrote this out I saved pawn movement for last, as it is the worst one to define in writing.}
+
+Pawns advance one square and capture diagonally forward. A pawn on the 8\textsuperscript{th}/1\textsuperscript{st} rank promotes. A pawn on the 2\textsuperscript{nd}/7\textsuperscript{th} can advance two squares, even if it has moved on a previous turn.  The En passant rule is not in effect.  
+
+The pawn can move a vertical distance of at most one.  A pawn may not advance into a column occupied by an opposing piece, even if there is an unoccupied square in that column, and even if the opposing piece is on a corner level, however a pawn may advance into a column occupied by a friendly piece.  If a pawn is positioned to capture into a column that contains two opposing pieces then the pawn may capture either one of them. 
+ 
+For a pawn to do the two step advance, the pawn must be able to do a one step advance, and the destination column can not be occupied by an opposing piece.
+
+A pawn on a corner level can advance one square sideways along the same rank, in the direction toward the center files of the board only (and without capturing.)  It can do this even if it has moved on a previous turn.  It must start this move from on a corner level but can end on a main level or a corner level.  Again, the destination column can not be occupied by an opposing piece.
+
+A pawn on a main level may not move onto a corner level, either by capturing or by advancing.
+
+\subsection{The Knight and Bishop}
+
+The knight and bishop have custom movements.  The columns they are allowed to move and/or capture into are described with figure \ref{bn}.  They also have two special movement rules associated with corner levels. Neither the knight or bishop can move to a different square in the same column (unless exempted by the 1\textsuperscript{st} rule below.)  The knight and bishop can move a vertical distance of at most one (unless exempted by the 1\textsuperscript{st} rule below.)  
+
+\begin{enumerate}
+\item A knight or bishop on a corner level can make a non-capturing move to a square on any corner level, including an opponent's level and the level it is on.
+%\item A knight on a corner level can make a capturing move to any of the four squares on its same level.
+\item A knight or bishop on a corner level may not capture a piece on a different corner level.
+\end{enumerate}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{bn15}
+\end{center}
+\label{bn}
+\caption{The bishop/knight can jump to the black circles.}
+%The bishop always captures without moving or moves without capturing.  It can capture XOR move to the yellow circles, it can capture the X's.  The knight can jump to the black circles.
+\end{figure}
+
+\subsection{The Queen}
+
+The Queen moves along a path of columns.  This path is defined to include the column the move finishes on but excludes the column the move starts on.  The Queen goes to a square in the last column of the path.  
+
+The movement directions are the same as for a Queen in standard chess: along a rank, a file, or diagonally.
+
+An OCCUPIED COLUMN is defined as a column with at least one square that is occupied by a piece.  An EMPTY COLUMN is a column where all of its squares are unoccupied.
+
+\begin{enumerate}
+\item The Queen can move along a path of empty columns.  
+\item If a path contains an occupied column, then the Queen is BLOCKED from proceeding any further: the Queen can go to a square in the first occupied column it encounters along this path. 
+\end{enumerate}
+
+\subsection{The Rook}
+
+The rook can make a vertical move, a one-step horizontal move, or a two-step horizontal move.
+
+When making a vertical move the rook can go to another square in its column.  The vertical order of the squares in a column is irrelevant: the rook can hop when moving vertically.
+
+When making a one-step horizontal move the rook can go to another square on its level on either the same rank or the same file, like a standard rook, and the rook cannot hop over an occupied square on its own level (however a rook is not blocked by an occupied square on a different level.)
+
+When making a two-step horizontal move the rook does two valid one-step horizontal moves in orthogonal directions.  If the rook captures a piece on its first horizontal move, then it cannot perform the second horizontal move.
+
+\textit{The idea for the rook's movement came from a form 3D chess developed by R. Wayne Schmittberger and described in his book. "New rules for Classic Games".  The "hook-move" piece was originally part of some variants of shogi (Japanese chess).  In Schmittberger's 3D hook-move chess, the hook-move allows rooks to move in planes instead of lines, a natural extension from 2D to 3D.}
+
+
+\subsection{Castling}
+
+Castling is much more varied than in standard chess.  Each player can castle up to twice in a game (once with the King and once with the Queen).  Castling can only be done if neither of the pieces involved has yet moved (but it is okay if the level that one of the pieces is on has moved).  Unlike standard chess, castling out of check is allowed in Tri D Chess because last second escapes are the norm in the 23rd century.  Each side has 6 possible castling moves, they are:
+
+Kingside/Queenside King-knight castling: 
+Where the King swaps places with either knight.  
+Notation: K-N / K-O-N.
+
+Kingside/Queenside Queen-knight castling: 
+Where the Queen swaps places with either knight.  
+Notation: Q-N / Q-O-N.
+
+Kingside King-rook castling: 
+Where the King swaps places with the rook immediately beside it.
+Notation: K-R.
+
+Queenside King-rook castling: 
+Where the King moves to the Queen's starting square and the Queenside rook moves to the King's starting square.  (This can not be done if the Queen's starting square is occupied.)  
+Notation: K-O-R.
+
+
+%------------------------------------------------
+
+%------------------------------------------------
+
+%\section*{Section Name}
+
+%Cras gravida, est vel interdum euismod, tortor mi 
+%\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
+%\begin{center}
+%\includegraphics[width=0.38\textwidth]{fish.png}
+%\end{center}
+%\caption{Fish}
+%\end{wrapfigure}
+%Aliquam fringilla 
+
+%------------------------------------------------
+
+%\section*{Conclusion}
+
+%Fusce in nibh augue. Cum sociis natoque penatibus et 
+
+%\begin{enumerate}
+%\item First numbered list item
+%\item Second numbered list item
+%\end{enumerate}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\bibliographystyle{unsrt}
+
+%\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

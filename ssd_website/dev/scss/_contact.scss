@@ -1,0 +1,122 @@
+.contactDiv{
+    // border:0.5px dashed #5a4969;
+    
+    width:$inputWidth;  
+    line-height: 25px;
+    border-radius:$borderRadius;
+    padding: $cellPadding;
+    margin-top: $cellMargin;
+}
+.border{
+    border:$contactDivBorder;
+    width: $divWidth;
+    display: $inputDisplay;
+}
+.width{
+    padding-bottom: $cellPadding;
+    
+}
+.contactCenter{
+   margin: auto;
+}
+input[type=text],input[type=email],input[type=phone],textarea{
+    width: $inputWidth;
+    padding: $inputPadding;
+    // margin: $inputMargin;
+    display: $inputDisplay;
+    border:$inputBorder;
+    border-radius:$radius;
+    box-sizing: $borderRadius;
+  }
+.buttonMargin{
+    margin-top: $cellMargin;
+}
+
+.contactBg{
+    background-color:$text-color-light;
+   
+      padding-bottom: 5px;
+      padding-top: 1px;
+      margin-top: 10px;
+      border-radius: 13px;
+}
+
+
+.contactHeading{
+    font-weight: bold;
+    font-size: 20px;
+    color:$bgColor;
+}
+.contactHelp{
+  font-size: 18px;
+  line-height: $line-height;
+
+}
+.contactFormLabel{
+    font-weight: $fontStyle;
+    // width:$labelwidth;
+    float:left;
+    padding:0px;
+    padding-top: 8px;
+   
+}
+.contactInput{
+    width:$leftWidth;
+    border-radius: 2px;
+    padding:0px;
+    float:right;
+}
+.contactRadio{
+   
+   width:$radioWidth;  
+   border:$radioBorder;
+    line-height: $lineHeight;
+    border-radius:$borderRadius;
+    padding: $cellPadding;
+    margin-top: $radioMargin-top;
+    margin-left:$radioMargin-top;
+    font-weight: $fontStyle;
+}
+
+.inputButton{
+    margin-top: 100px;
+}
+.button{
+     color:$text-color-light;
+     background-color: $bgColor;
+     border:$buttonBorder;
+     height: $buttonHeight;
+     width: $buttonWidth;
+     border-radius: $button-radius;     
+}
+
+.feedbackBg{
+    background-color:$text-color-light;
+    margin:auto;
+    padding-top: 30px;     
+      padding-left: 10px;     
+      margin-top: 10px;
+      border-radius: 8px;
+      height: 200px;;
+}
+
+@media (max-width: $tabletPortrait) {
+    .contactFormLabel{
+        width: 100%;
+        float: none; 
+        padding: 0px
+    }
+     .contactInput {
+        width: 100%;
+        float: none;
+        //display: block; 
+    } 
+
+    .contactDiv {
+        padding: 0px;
+        display: block;
+        width: 100%
+    }
+   
+}
+

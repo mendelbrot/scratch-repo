@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Recommended Leads</title>
+</head>
+
+<body>
+  <h1>
+    Recommended Leads
+  </h1>
+
+  <div>
+    <button type="button" onClick="window.open('<%= state.googleAuthUrl %>')">Google Sign In</button>
+    <button type="button" onClick="window.location.href='<%= state.signoutUrl %>'">Google Sign Out</button>
+    <button type="button" onClick="window.location.href='<%= state.refreshUrl %>'">Refresh</button>
+  </div>
+  
+  <% if (state.message) { %>
+    <div>
+      <p><%= state.message %></p>
+    </div>
+  <% } %>
+
+  <div>
+    <% if (state.recommendedLeads) { %>
+      <% for(const item of state.recommendedLeads) { %>
+        <form action="/add" method="POST">
+          <input type="text" placeholder="First Name" name="FirstName" value="<%= item.firstName %>">
+          <input type="text" placeholder="Last Name" name="LastName" value="<%= item.lastName %>">
+          <input type="text" placeholder="Company" name="Company">
+          <input type="text" placeholder="Email" name="Email" value="<%= item.email %>">
+          <input type="hidden" name="uuid" value="<%= item.uuid %>">
+          <button type="submit">Add Lead</button>
+        </form>
+      <% } %>
+    <% } %>
+  </div>
+</body>
+
+</html>
