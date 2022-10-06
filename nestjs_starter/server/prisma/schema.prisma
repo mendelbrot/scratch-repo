@@ -1,0 +1,103 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// not used -- WIP.  to remove: $ yarn remove prisma-class-generator
+generator prismaClassGenerator {
+  provider = "prisma-class-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model User {
+  id                    Int                   @id @default(autoincrement())
+  created_at            DateTime              @default(now())
+  updated_at            DateTime              @updatedAt
+  name                  String                @unique
+  hash                  String
+  workspaces            Workspace[]           @relation("workspace_memberships")
+  role                  Role                  @default(USER)
+  workspace_memberships WorkspaceMembership[]
+
+  @@map("users")
+}
+
+model Workspace {
+  id                    Int                   @id @default(autoincrement())
+  created_at            DateTime              @default(now())
+  updated_at            DateTime              @updatedAt
+  name                  String
+  members               User[]                @relation("workspace_memberships")
+  notebooks             Notebook[]
+  workspace_memberships WorkspaceMembership[]
+
+  @@map("workspaces")
+}
+
+model WorkspaceMembership {
+  id           Int         @id @default(autoincrement())
+  workspace    Workspace   @relation(fields: [workspace_id], references: [id])
+  workspace_id Int
+  user         User        @relation(fields: [user_id], references: [id])
+  user_id      Int
+  created_at   DateTime    @default(now())
+  updated_at   DateTime    @updatedAt
+  access_level AccessLevel @default(READ)
+
+  @@unique([user_id, workspace_id])
+  @@map("workspace_memberships")
+}
+
+model Notebook {
+  id           Int       @id @default(autoincrement())
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+  name         String
+  workspace    Workspace @relation(fields: [workspace_id], references: [id])
+  workspace_id Int
+  notes        Note[]
+  tags         Tag[]
+
+  @@map("notebooks")
+}
+
+model Note {
+  id          Int      @id @default(autoincrement())
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  name        String?
+  body        String?
+  notebook    Notebook @relation(fields: [notebook_id], references: [id])
+  notebook_id Int
+  tags        Tag[]    @relation("note_tags")
+
+  @@map("notes")
+}
+
+model Tag {
+  id          Int      @id @default(autoincrement())
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  name        String
+  notebook    Notebook @relation(fields: [notebook_id], references: [id])
+  notebook_id Int
+  notes       Note[]   @relation("note_tags")
+
+  @@map("tags")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum AccessLevel {
+  READ
+  FULL
+}
