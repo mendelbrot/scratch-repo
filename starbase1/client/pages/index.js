@@ -5,10 +5,31 @@ import { supabase } from '../lib/supabaseClient'
 
 export default function Home() {
 
+  // let email = 'demo@example.com'
+  // let password = 'password'
+  let email = 'dawn@supamail.com'
+  let password = '11111111'
+
+  const handleSignup = async () => {
+    console.log('# sign up')
+    const res = await supabase.auth.signUp({
+      email: email,
+      password: password
+    })
+    console.log(res)
+  }
+
+  const handleSignout = async () => {
+    console.log('# sign out')
+    const res = await supabase.auth.signOut()
+    console.log(res)
+  }
+
   const handleSignin = async () => {
+    console.log('# sign in')
     const res = await supabase.auth.signIn({
-      email: 'demo@example.com',
-      password: 'password',
+      email: email,
+      password: password
     })
     console.log(res)
   }
@@ -22,7 +43,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <p>{email}</p>
+        <p>{password}</p>
+        <button onClick={handleSignup}>Sign up</button>
         <button onClick={handleSignin}>Sign in</button>
+        <button onClick={handleSignout}>Sign out</button>
       </main>
     </div>
   )
