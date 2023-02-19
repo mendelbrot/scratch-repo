@@ -16,3 +16,28 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+**some useful commands**
+```
+mix deps.get
+mix phx.server
+mix ecto.migrate
+
+mix ecto.drop
+mix ecto.create
+mix ecto.rollback
+mix ecto.migrate --log-migrations-sql
+
+mix help phx.gen.schema
+mix ecto.gen.migration alter_users_table
+
+source .env
+```
+
+**uberauth**
+https://medium.brianemory.com/elixir-phoenix-creating-an-app-part-4-using-google-%C3%BCberauth-e7d2ed1a3541
+
+**ecto-migrations**
+https://fly.io/phoenix-files/anatomy-of-an-ecto-migration/
+https://devhints.io/phoenix-migrations
+

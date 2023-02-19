@@ -22,5 +22,5 @@
     "phoenix-heex": "html",
     "elixir": "html"
   },
-  "cSpell.words": ["noreply"]
+  "cSpell.words": ["citext", "heex", "liveview", "noreply"]
 }
