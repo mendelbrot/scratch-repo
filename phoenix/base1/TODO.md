@@ -1,4 +1,4 @@
 - [x] set up heex and emmet extensions
-- [ ] try liveview
+- [x] try liveview
 - [ ] create users database table
 - [ ] set up github authentication
