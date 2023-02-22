@@ -1,17 +1,17 @@
 defmodule AppWeb.LightLive do
   use AppWeb, :live_view
-  # use AppWeb, :component
-  # use Phoenix.LiveComponent
-  # import Phoenix.Component
 
   def mount(_params, _session, socket) do
+    IO.inspect(self(), label: "MOUNT")
     socket = assign(socket, brightness: 10)
     {:ok, socket}
   end
 
   def render(assigns) do
+    IO.inspect(self(), label: "RENDER")
+
     ~H"""
-    <h1>Front Porch Light</h1>
+    <h1 class="text-blue-500 text-5xl font-bold text-center">Front Porch Light</h1>
     <div id="light">
       <div class="meter">
         <span style={"width: #{@brightness}%"}>
@@ -35,21 +35,28 @@ defmodule AppWeb.LightLive do
   end
 
   def handle_event("off", _, socket) do
+    IO.inspect(self(), label: "OFF")
     socket = assign(socket, brightness: 0)
     {:noreply, socket}
   end
 
   def handle_event("down", _, socket) do
+    IO.inspect(self(), label: "DOWN")
     socket = update(socket, :brightness, fn b -> b - 10 end)
     {:noreply, socket}
   end
 
   def handle_event("up", _, socket) do
+    IO.inspect(self(), label: "UP")
     socket = update(socket, :brightness, fn b -> b + 10 end)
     {:noreply, socket}
   end
 
   def handle_event("on", _, socket) do
+    IO.inspect(self(), label: "ON")
+
+    # raise "🔥"
+
     socket = assign(socket, brightness: 100)
     {:noreply, socket}
   end

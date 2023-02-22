@@ -3,7 +3,8 @@ defmodule AppWeb.NewHTML do
 
   def index(assigns) do
     ~H"""
-    Hello!
+    <h1>Hello <%= @message %>!</h1>
+    <%= raw("<b>Bold?</b>") %>
     """
   end
 end

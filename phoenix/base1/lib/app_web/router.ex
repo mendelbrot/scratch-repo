@@ -18,7 +18,7 @@ defmodule AppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "new", NewController, :index
+    get "/new/:message", NewController, :index
     get "/hello", HelloController, :index
 
     live "/light", LightLive
