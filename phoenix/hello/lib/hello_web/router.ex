@@ -21,7 +21,7 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/forum", ForumLive, :index
+    live "/forum", ForumLive
   end
 
   # Other scopes may use custom stacks.
