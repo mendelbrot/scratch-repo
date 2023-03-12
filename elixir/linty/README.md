@@ -4,5 +4,6 @@
 
 ```bash
 iex -S mix
-
+Linty.run()
+r Linty
 ```
