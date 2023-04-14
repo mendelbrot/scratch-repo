@@ -19,6 +19,8 @@ const ITEMS: [&str; 12] = [
 ];
 
 fn main() {
+  println!();
+
   for d in 0..DAYS_OF_XMAS.len() {
     let day = DAYS_OF_XMAS[d];
 
