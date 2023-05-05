@@ -1,0 +1,10 @@
+---
+title: process_email_data_for_all_active_users
+---
+flowchart TD
+  A1((start)) --> A2[/"read app settings \n- suggested_leads \n- email_matching"/]
+  A2 --> A3[/read users \n- active?/]
+  subgraph B[for user in users]
+    B1{user.active?} --Yes--> B2[/"create job \n process_email_data_for_user \n- user"/]
+  end
+  A3 --> B

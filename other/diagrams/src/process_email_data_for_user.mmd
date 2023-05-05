@@ -1,0 +1,11 @@
+---
+title: process_email_data_for_user (user)
+---
+flowchart TD
+  A1(("start (user)")) --> A2[/read user/]
+  A2 --> A3[/"read app_settings \n- suggested_leads? \n- email_matching? \n- num_days_emails"/]
+  A3 --> A4{suggested_leads \n or email_matching?} --Yes--> A5
+  A4 --No--> A6((end))
+  A5[[calc_email_from_date \n- app_settings.num_days_emails \n- user.lastprocessed]]
+  A5 --> A7[[get_email_messages \n- user.email \n- email_from_date]]
+  

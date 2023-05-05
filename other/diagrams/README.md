@@ -1,0 +1,4 @@
+- create/edit the diagrams in the [mermaid live editor](https://mermaid-js.github.io/mermaid-live-editor)
+- copy the diagram markup to a file in the `src` directory
+- or use a [live preview plugin in for code](https://marketplace.visualstudio.com/items?itemName=tomoyukim.vscode-mermaid-editor)
+- run `bash mmdcf.sh` to create png files in `target` for all of the diagrams in `src`
